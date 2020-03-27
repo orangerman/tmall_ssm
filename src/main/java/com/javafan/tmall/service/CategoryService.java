@@ -1,7 +1,6 @@
 package com.javafan.tmall.service;
 
 import com.javafan.tmall.pojo.Category;
-import com.javafan.tmall.util.Page;
 
 import java.util.List;
 
@@ -16,9 +15,8 @@ public interface CategoryService {
      *
      * @return
      */
-    List<Category> list(Page page);
+    List<Category> list();
 
-    int total();
 
    void add(Category category);
 

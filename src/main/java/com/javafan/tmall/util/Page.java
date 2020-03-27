@@ -4,6 +4,7 @@ package com.javafan.tmall.util;
  * @author JavaFan
  * @version 1.0
  * @date 2020/3/25 11:12 上午
+ * 主要用来为显示提供分页
  */
 public class Page {
     //开始页数

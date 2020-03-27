@@ -8,8 +8,8 @@
     <!--    启动对注解的识别-->
     <context:annotation-config/>
     <context:component-scan base-package="com.javafan.tmall.service">
-         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-</context:component-scan>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
 
     <context:property-placeholder location="classpath:dbConfig.properties"/>
@@ -48,18 +48,21 @@
         <property name="typeAliasesPackage" value="com.javafan.tmall.pojo"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
-        <!--分页插件，目前先注释，后面重构的时候才会使用
-               <property name="plugins">
-                   <array>
-                       <bean class="com.github.pagehelper.PageInterceptor">
-                           <property name="properties">
-                               <value>
-                               </value>
-                           </property>
-                       </bean>
-                   </array>
-               </property>
-               -->
+
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            reasonable=true
+                            offsetAsPageNum=true
+                            rowBoundsWithCount=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+
     </bean>
 
     <!--    Mybatis的Mapper文件的识别-->

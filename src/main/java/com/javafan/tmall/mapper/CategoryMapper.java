@@ -1,53 +1,21 @@
 package com.javafan.tmall.mapper;
 
 import com.javafan.tmall.pojo.Category;
-import com.javafan.tmall.util.Page;
-
+import com.javafan.tmall.pojo.CategoryExample;
 import java.util.List;
 
-/**
- * @author JavaFan
- * @version 1.0
- * @date 2020/3/25 9:12 上午
- */
-
 public interface CategoryMapper {
-    /**
-     * 根据分页信息返回分类的数据
-     * @param page 分页信息
-     * @return
-     */
-    public List<Category> list(Page page);
+    int deleteByPrimaryKey(Integer id);
 
-    /**
-     * 返回分类信息的总记录数
-     * @return 总记录数
-     */
-    public int total();
+    int insert(Category record);
 
-    /**
-     * 添加分类
-     * @param category 分类信息
-     */
-    void add(Category category);
+    int insertSelective(Category record);
 
-    /**
-     * 删除分类信息
-     * @param id 所在分类项的ID值 对应的是数据库中category的ID
-     */
-    void delete(int id);
+    List<Category> selectByExample(CategoryExample example);
 
-    /**
-     * 获取对应id的category信息
-     * @param id category的id
-     * @return
-     */
-    Category get(int id);
+    Category selectByPrimaryKey(Integer id);
 
-    /**
-     * 更新分类信息
-     * @param category
-     */
-    void update(Category category);
+    int updateByPrimaryKeySelective(Category record);
 
+    int updateByPrimaryKey(Category record);
 }
